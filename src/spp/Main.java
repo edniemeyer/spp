@@ -52,11 +52,12 @@ public class Main {
 
 		for (Node node : nodes) {
 			if(node.equals(endNode)) {
+				System.out.println("Shortest route from "+startNode.getName()+ " to " + endNode.getName()+":");
 				for (Node path : node.getShortestPath()) {
-					System.out.println(path.getName());
+					System.out.print(path.getName() + "->");
 				}
 				System.out.println(node.getName());
-				System.out.println(node.getDistance());
+				System.out.println("Total distance to get there: " + node.getDistance());
 			}
 		}
 
