@@ -16,14 +16,49 @@ public class Node {
 	private Map<Node, Integer> adjacentNodes = new HashMap<Node, Integer>();
 	private List<Node> shortestPath = new LinkedList<Node>(); 
 	
+	//for Dijkstra's algorithm all of the nodes besides the source one needs to have infinite distance
+	private Integer distance = Integer.MAX_VALUE;
+	
 	//constructor with name setting
 	public Node(String name) {
-		this.name = name;
+		this.setName(name);
 	}
 	
 	//adding node
 	public void addAdjacentNode(Node adjacent, Integer distance) {
 		adjacentNodes.put(adjacent, distance);
+	}
+
+	public Integer getDistance() {
+		return distance;
+	}
+
+	public void setDistance(Integer distance) {
+		this.distance = distance;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Node> getShortestPath() {
+		return shortestPath;
+	}
+
+	public void setShortestPath(List<Node> shortestPath) {
+		this.shortestPath = shortestPath;
+	}
+
+	public Map<Node, Integer> getAdjacentNodes() {
+		return adjacentNodes;
+	}
+
+	public void setAdjacentNodes(Map<Node, Integer> adjacentNodes) {
+		this.adjacentNodes = adjacentNodes;
 	}
 	
 	
